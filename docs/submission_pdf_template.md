@@ -25,11 +25,11 @@
 |----------|-----|
 | **GitHub repository** | https://github.com/syedhassan13/AgenticAi_Assigment_1 |
 | **Final commit hash** | dfb0b3833fe45373b4a8cfa8578038823f97e8ec |
-| **Working agent interface** | https://YOUR-APP.onrender.com/ |
-| **Health endpoint (GET)** | https://YOUR-APP.onrender.com/health |
-| **Arena endpoint (POST)** | https://YOUR-APP.onrender.com/arena/run |
-| **Manifest endpoint (GET)** | https://YOUR-APP.onrender.com/arena/manifest |
-| **API documentation** | https://YOUR-APP.onrender.com/docs |
+| **Working agent interface** | https://agenticai-assigment-1.onrender.com/ |
+| **Health endpoint (GET)** | https://agenticai-assigment-1.onrender.com/health |
+| **Arena endpoint (POST)** | https://agenticai-assigment-1.onrender.com/arena/run |
+| **Manifest endpoint (GET)** | https://agenticai-assigment-1.onrender.com/arena/manifest |
+| **API documentation** | https://agenticai-assigment-1.onrender.com/docs |
 
 ---
 
