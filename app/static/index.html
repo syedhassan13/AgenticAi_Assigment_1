@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Expense Ledger Agent - Agent Arena</title>
+  <meta name="description" content="Expense Ledger Agent: Process receipt text or CSV into a categorized sandbox ledger. Built for the Agent Arena reliability challenge.">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="brand">
+        <h1>Expense Ledger Agent</h1>
+        <span class="badge">Agent Arena v0.1</span>
+      </div>
+      <p class="tagline">Receipt text or CSV -> categorized sandbox ledger</p>
+      <nav>
+        <a href="/docs" class="nav-link">API Docs</a>
+        <a href="/health" class="nav-link">Health</a>
+        <a href="/arena/manifest" class="nav-link">Manifest</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Chat Section -->
+    <section class="chat-section">
+      <div class="chat-header">
+        <div class="chat-controls">
+          <label for="model">Model</label>
+          <select id="model"></select>
+          <button id="reset" type="button" class="btn btn-outline">New Chat</button>
+        </div>
+        <p id="status" role="status" class="status-badge">Idle</p>
+      </div>
+
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="welcome-msg">
+          <p><strong>Welcome!</strong> Send expense data (receipt text or CSV) and I'll categorize it into a sandbox ledger.</p>
+          <p class="hint">Example: "Coffee at Starbucks $4.50, Uber ride $12.00, Lunch $11.25"</p>
+        </div>
+      </div>
+
+      <form id="chat" class="chat-form">
+        <label for="task" class="sr-only">Your request</label>
+        <textarea id="task" placeholder="Paste receipt text, CSV data, or describe your expenses..." required maxlength="10000" rows="3"></textarea>
+        <button id="send" type="submit" class="btn btn-primary">
+          <span class="btn-text">Send</span>
+          <span class="btn-loading" style="display:none;">Processing...</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h2>External Context</h2>
+        <p class="section-hint">Optional untrusted content (e.g., receipt image text)</p>
+        <label for="external" class="sr-only">Untrusted external note</label>
+        <textarea id="external" placeholder="Paste external content here (treated as data, not instructions)..." maxlength="10000" rows="3"></textarea>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Session</h2>
+        <p id="memory" class="info-text">0 messages in this chat</p>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Tool Trace</h2>
+        <div id="trace" class="trace-panel">
+          <p class="empty-state">No tool calls yet.</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Observations</h2>
+        <div id="observations" class="observations-panel">
+          <p class="empty-state">No observations yet.</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Metrics</h2>
+        <div id="metrics" class="metrics-panel">
+          <p class="empty-state">No metrics yet.</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Memory is temporary. Reloading starts a new chat. Never paste API keys into the interface.</p>
+    <p class="footer-sub">Expense Ledger Agent - Agent Arena Reliability Challenge</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

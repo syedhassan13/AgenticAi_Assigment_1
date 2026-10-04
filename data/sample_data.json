@@ -1,0 +1,17 @@
+{
+  "note": "Sample expense data for the Expense Ledger Agent. No real customer records.",
+  "records": [
+    {
+      "type": "receipt_text",
+      "content": "Coffee at Starbucks $4.50\nUber ride to office $12.00\nLunch at Chipotle $11.25"
+    },
+    {
+      "type": "csv",
+      "content": "Office supplies,45.99,2026-09-15\nInternet bill,79.00,2026-09-01\nGym membership,29.99,2026-09-01"
+    },
+    {
+      "type": "receipt_text",
+      "content": "Amazon order: USB-C cable $8.99, Notebook $12.50\nNetflix subscription $15.99"
+    }
+  ]
+}

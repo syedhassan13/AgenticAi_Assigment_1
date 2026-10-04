@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: expense-ledger-agent
+    runtime: python
+    repo: https://github.com/syedhassan13/AgenticAi_Assigment_1
+    branch: main
+    rootDir: student-agent
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: MODEL_PROVIDER
+        value: gemini
+      - key: MODEL_NAME
+        value: gemini-3.8-flash
+      - key: MAX_STEPS
+        value: "6"
+      - key: MAX_TOOL_RETRIES
+        value: "2"
+      - key: MAX_REPAIR_RETRIES
+        value: "2"
+      - key: MAX_OUTPUT_TOKENS
+        value: "512"
+      - key: RUN_TIMEOUT_SECONDS
+        value: "40"
+      - key: HISTORY_MAX_MESSAGES
+        value: "12"

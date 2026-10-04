@@ -1,0 +1,28 @@
+{
+  "arena_version": "0.1",
+  "agent_name": "Expense Ledger Agent",
+  "domain": "Expense Ledger Agent",
+  "description": "Processes receipt text or CSV inputs into a categorised sandbox ledger with duplicate detection",
+  "endpoint": "/arena/run",
+  "health_endpoint": "/health",
+  "implementation": "expense_ledger",
+  "tools": [
+    "parse_input",
+    "categorize_expense",
+    "detect_duplicates",
+    "write_ledger",
+    "request_clarification"
+  ],
+  "fault_types": [
+    "none",
+    "tool_timeout",
+    "malformed_tool_output",
+    "invalid_agent_decision"
+  ],
+  "limits": {
+    "max_steps": 6,
+    "max_tool_retries": 2,
+    "run_timeout_seconds": 40,
+    "max_response_bytes": 50000
+  }
+}
